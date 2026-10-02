@@ -5,8 +5,8 @@ services:
     env_file:
       - .env
     volumes:
-      - /home/USER/src/ort:/workspace/repo
-      - /opt/articulation/state:/workspace/state
+      - ${ARTICULATION_REPO_HOST:-${HOME}/src/ort}:/workspace/repo
+      - ${ARTICULATION_STATE_HOST:-/opt/articulation/state}:/workspace/state
     working_dir: /app
     network_mode: host
-    command: ["--job", "ai-stack-research"]
+    command: ["--job", "${WORKER_JOB:-ai-stack-research}"]
