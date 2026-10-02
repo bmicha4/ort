@@ -1,0 +1,12 @@
+services:
+  worker:
+    build: .
+    restart: "no"
+    env_file:
+      - .env
+    volumes:
+      - /home/USER/src/ort:/workspace/repo
+      - /opt/articulation/state:/workspace/state
+    working_dir: /app
+    network_mode: host
+    command: ["--job", "ai-stack-research"]
