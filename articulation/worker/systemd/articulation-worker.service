@@ -1,0 +1,12 @@
+[Unit]
+Description=Articulation autonomous research worker
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=USER
+WorkingDirectory=/opt/articulation/worker
+EnvironmentFile=/etc/articulation/worker.env
+ExecStart=/opt/articulation/worker/.venv/bin/python -m agent.run --job ai-stack-research
+TimeoutStartSec=6h
