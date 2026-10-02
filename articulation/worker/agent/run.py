@@ -17,7 +17,7 @@ from dotenv import load_dotenv
 from openai import OpenAI
 
 
-ROOT = Path(os.getenv("ARTICULATION_REPO", "/workspace/repo"))
+load_dotenv()\n\nROOT = Path(os.getenv("ARTICULATION_REPO", "/workspace/repo"))
 RESEARCH_DIR = ROOT / os.getenv("RESEARCH_DIR", "articulation/docs/research")
 DB_PATH = Path(os.getenv("STATE_DB", "/workspace/state/worker.db"))
 BRANCH = os.getenv("ARTICULATION_BRANCH", "articulation-mvp")
