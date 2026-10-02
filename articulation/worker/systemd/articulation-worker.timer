@@ -1,0 +1,10 @@
+[Unit]
+Description=Run Articulation autonomous research worker
+
+[Timer]
+OnCalendar=*-*-* 02:00:00
+Persistent=true
+RandomizedDelaySec=15m
+
+[Install]
+WantedBy=timers.target
